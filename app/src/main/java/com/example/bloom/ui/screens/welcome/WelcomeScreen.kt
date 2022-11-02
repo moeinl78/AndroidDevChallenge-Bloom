@@ -1,8 +1,6 @@
 package com.example.bloom.ui.screens.welcome
 
 import androidx.compose.foundation.Image
-import androidx.compose.foundation.background
-import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxSize
@@ -12,9 +10,7 @@ import androidx.compose.foundation.layout.offset
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.paddingFromBaseline
 import androidx.compose.material.Button
-import androidx.compose.material.ButtonColors
 import androidx.compose.material.ButtonDefaults
-import androidx.compose.material.ButtonElevation
 import androidx.compose.material.MaterialTheme
 import androidx.compose.material.Surface
 import androidx.compose.material.Text
@@ -48,7 +44,7 @@ private fun WelcomeScreenContent() {
         modifier = Modifier.fillMaxWidth(1f)
     ) {
         Spacer(modifier = Modifier.height(72.dp))
-        
+
         LeafImage()
 
         Spacer(modifier = Modifier.height(48.dp))
@@ -70,7 +66,7 @@ private fun WelcomeScreenContent() {
 @Composable
 private fun LeafImage() {
     val isLight = MaterialTheme.colors.isLight
-    val leafImgRes = if(isLight) {
+    val leafImgRes = if (isLight) {
         R.drawable.ic_light_welcome_illos
     } else {
         R.drawable.ic_dark_welcome_illos
@@ -85,7 +81,7 @@ private fun LeafImage() {
 @Composable
 private fun LogoImage() {
     val isLight = MaterialTheme.colors.isLight
-    val logoImgRes = if(isLight) {
+    val logoImgRes = if (isLight) {
         R.drawable.ic_light_logo
     } else {
         R.drawable.ic_dark_logo
@@ -150,7 +146,7 @@ private fun LoginButton() {
 @Composable
 private fun WelcomeBackground() {
     val isLight = MaterialTheme.colors.isLight
-    val backgroundImgRes = if(isLight) {
+    val backgroundImgRes = if (isLight) {
         R.drawable.ic_light_welcome_bg
     } else {
         R.drawable.ic_dark_welcome_bg
