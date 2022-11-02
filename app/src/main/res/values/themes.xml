@@ -2,6 +2,6 @@
 <resources>
 
     <style name="Theme.Bloom" parent="android:Theme.Material.Light.NoActionBar">
-        <item name="android:statusBarColor">@color/purple_700</item>
+        <item name="android:statusBarColor">#FF2D3B2D</item>
     </style>
 </resources>

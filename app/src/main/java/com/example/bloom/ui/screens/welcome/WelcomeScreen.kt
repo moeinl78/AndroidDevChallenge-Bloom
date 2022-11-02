@@ -138,6 +138,9 @@ private fun LoginButton() {
         shape = MaterialTheme.shapes.medium,
         elevation = ButtonDefaults.elevation(
             defaultElevation = 0.dp,
+            pressedElevation = 0.dp,
+            focusedElevation = 0.dp,
+            disabledElevation = 0.dp
         )
     ) {
         Text(text = "Log in")
