@@ -6,13 +6,22 @@ import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxSize
+import androidx.compose.foundation.layout.fillMaxWidth
+import androidx.compose.foundation.layout.height
+import androidx.compose.foundation.layout.offset
 import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.layout.paddingFromBaseline
 import androidx.compose.material.Button
+import androidx.compose.material.ButtonColors
+import androidx.compose.material.ButtonDefaults
+import androidx.compose.material.ButtonElevation
 import androidx.compose.material.MaterialTheme
 import androidx.compose.material.Surface
 import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
+import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.tooling.preview.Preview
@@ -35,17 +44,24 @@ fun WelcomeScreen() {
 @Composable
 private fun WelcomeScreenContent() {
     Column(
-
+        horizontalAlignment = Alignment.CenterHorizontally,
+        modifier = Modifier.fillMaxWidth(1f)
     ) {
+        Spacer(modifier = Modifier.height(72.dp))
+        
         LeafImage()
 
-        Spacer(modifier = Modifier.padding(top = 16.dp, bottom = 16.dp))
+        Spacer(modifier = Modifier.height(48.dp))
 
         LogoImage()
 
         WelcomePageSubtitle()
 
+        Spacer(modifier = Modifier.height(40.dp))
+
         CreateAccountButton()
+
+        Spacer(modifier = Modifier.height(8.dp))
 
         LoginButton()
     }
@@ -61,7 +77,8 @@ private fun LeafImage() {
     }
     Image(
         painter = painterResource(id = leafImgRes),
-        contentDescription = null
+        contentDescription = null,
+        modifier = Modifier.offset(x = 88.dp)
     )
 }
 
@@ -83,21 +100,47 @@ private fun LogoImage() {
 private fun WelcomePageSubtitle() {
     Text(
         text = "Beautiful home garden solutions.",
-        style = MaterialTheme.typography.subtitle1
+        style = MaterialTheme.typography.subtitle1,
+        modifier = Modifier.paddingFromBaseline(32.dp)
     )
 }
 
 @Composable
 private fun CreateAccountButton() {
-    Button(onClick = {}) {
+    Button(
+        onClick = {},
+        modifier = Modifier
+            .fillMaxWidth()
+            .height(48.dp)
+            .padding(horizontal = 16.dp),
+        colors = ButtonDefaults.buttonColors(
+            backgroundColor = MaterialTheme.colors.secondary,
+            contentColor = MaterialTheme.colors.onSecondary
+        ),
+        shape = MaterialTheme.shapes.medium
+    ) {
         Text(text = "Create account")
     }
 }
 
 @Composable
 private fun LoginButton() {
-    Button(onClick = {}) {
-        Text(text = "Log in to your account")
+    Button(
+        onClick = {},
+        modifier = Modifier
+            .fillMaxWidth()
+            .height(48.dp)
+            .padding(horizontal = 16.dp),
+        colors = ButtonDefaults.buttonColors(
+            backgroundColor = Color.Transparent,
+            contentColor = MaterialTheme.colors.onPrimary
+        ),
+        shape = MaterialTheme.shapes.medium,
+        elevation = ButtonDefaults.elevation(
+            defaultElevation = 0.dp,
+        )
+    ) {
+        Text(text = "Log in")
     }
 }
 
