@@ -135,7 +135,7 @@ private fun LoginButton() {
         modifier = Modifier
             .fillMaxWidth()
             .height(48.dp),
-        action = {  },
+        action = {},
         contentText = "Log in"
     )
 }
